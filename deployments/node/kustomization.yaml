@@ -7,6 +7,8 @@ resources:
   - configmap.yaml
   - deployment.yaml
   - service.yaml
+  - postgres.statefulset.yaml
+  - postgres.service.yaml
 
 # # Opcional: personalizar valores desde aquí
 # configMapGenerator:
