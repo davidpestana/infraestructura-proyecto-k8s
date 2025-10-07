@@ -16,9 +16,9 @@ spec:
       #     - $values/base/monitoring/kube-prom.values.yaml
       #     - $values/environments/eks-prod-eu-central-1/overlay/monitoring/kube-prom.values.yaml
 
-    - repoURL: https://github.com/llamaliticaAI/infrastructure.git
-      targetRevision: main
-      ref: values
+    # - repoURL: https://github.com/llamaliticaAI/infrastructure.git
+    #   targetRevision: main
+    #   ref: values
 
   destination:
     server: https://kubernetes.default.svc
