@@ -9,20 +9,20 @@ resources:
   - deployment.yaml
   - service.yaml
 
-# Opcional: personalizar valores desde aquí
-configMapGenerator:
-  - name: app-config
-    literals:
-      - DB_HOST=postgres
-      - DB_NAME=postgres
-      - APP_VERSION=v1
+# # Opcional: personalizar valores desde aquí
+# configMapGenerator:
+#   - name: app-config
+#     literals:
+#       - DB_HOST=postgres
+#       - DB_NAME=postgres
+#       - APP_VERSION=v1
 
-secretGenerator:
-  - name: app-secret
-    literals:
-      - DB_USER=postgres
-      - DB_PASS=123456
-    type: Opaque
+# secretGenerator:
+#   - name: app-secret
+#     literals:
+#       - DB_USER=postgres
+#       - DB_PASS=123456
+#     type: Opaque
 
-generatorOptions:
-  disableNameSuffixHash: true
+# generatorOptions:
+#   disableNameSuffixHash: true
