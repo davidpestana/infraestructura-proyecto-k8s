@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: ghcr.io/davidpestana/aplicacion-node-proyecto-k8s:v1.0.0
+        image: ghcr.io/davidpestana/aplicacion-node-proyecto-k8s:v2.0.0
         ports:
         - containerPort: 80
         envFrom:
