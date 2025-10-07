@@ -5,7 +5,6 @@ namespace: proyecto
 
 resources:
   - configmap.yaml
-  - secret.yaml
   - deployment.yaml
   - service.yaml
 
@@ -17,12 +16,12 @@ resources:
 #       - DB_NAME=postgres
 #       - APP_VERSION=v1
 
-# secretGenerator:
-#   - name: app-secret
-#     literals:
-#       - DB_USER=postgres
-#       - DB_PASS=123456
-#     type: Opaque
+secretGenerator:
+  - name: app-secret
+    literals:
+      - DB_USER=postgres
+      - DB_PASS=123456
+    type: Opaque
 
 # generatorOptions:
 #   disableNameSuffixHash: true
