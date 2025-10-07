@@ -5,7 +5,7 @@ metadata:
   namespace: proyecto
 spec:
   selector:
-    app: aplicacion   # debe coincidir con las labels del Deployment
+    app: node   # debe coincidir con las labels del Deployment
   ports:
     - port: 80         # puerto que expone el servicio
       targetPort: 80   # puerto en el contenedor de Node.js
