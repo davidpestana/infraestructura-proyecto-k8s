@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: proyecto
+data:
+  DB_HOST: postgres              # nombre del servicio de PostgreSQL en K8s
+  DB_NAME: postgres              # nombre de la base de datos
+  APP_VERSION: v1                # se puede cambiar en cada release

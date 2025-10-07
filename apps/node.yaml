@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: node
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/davidpestana/infraestructura-proyecto-k8s.git
+    targetRevision: main  # o 'master' o un tag
+    path: deployments/node   # ruta relativa dentro del repo donde están los manifests o kustomize
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: proyecto    # namespace donde se desplegará la app
+  syncPolicy:
+    automated:             # sync automático estilo GitOps
+      prune: true          # elimina recursos que se borran del repo
+      selfHeal: true       # repara si alguien cambia algo en clúster
+    syncOptions:
+      - CreateNamespace=true  # crea el namespace si no existe

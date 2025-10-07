@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: proyecto
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - secret.yaml
+  - deployment.yaml
+  - service.yaml
+
+# Opcional: personalizar valores desde aquí
+configMapGenerator:
+  - name: app-config
+    literals:
+      - DB_HOST=postgres
+      - DB_NAME=postgres
+      - APP_VERSION=v1
+
+secretGenerator:
+  - name: app-secret
+    literals:
+      - DB_USER=postgres
+      - DB_PASS=123456
+    type: Opaque
+
+generatorOptions:
+  disableNameSuffixHash: true
