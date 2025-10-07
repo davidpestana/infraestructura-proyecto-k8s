@@ -23,5 +23,5 @@ secretGenerator:
       - DB_PASS=123456
     type: Opaque
 
-# generatorOptions:
-#   disableNameSuffixHash: true
+generatorOptions:
+  disableNameSuffixHash: true
